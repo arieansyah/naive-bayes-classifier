@@ -1,7 +1,7 @@
 
 ## Naive bayes classifier
 
-Naive bayes classifier using php and laravel framework for [contact lenses dataset](https://archive.ics.uci.edu/ml/datasets/lenses)
+Naive bayes classifier using php and laravel framework for golf dataset
 
 - Clone / download.
 - Configure the env.
