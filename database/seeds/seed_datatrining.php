@@ -11,7 +11,6 @@ class seed_datatrining extends Seeder
      */
     public function run()
     {
-
-
+        
     }
 }

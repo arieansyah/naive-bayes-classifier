@@ -16,75 +16,130 @@
   <body>
     <div class="container">
       <div class="col-sm-4" id="input">
-        <h3 class="animated fadeInLeft" id="cuaca">
+        <h3 class="animated fadeInLeft" id="pelayanan_pegawai">
           <script>
-            if ({{ $cuaca }} == 1) cuaca.innerHTML = "Cuaca : Cerah";
-            if ({{ $cuaca }} == 2) cuaca.innerHTML = "Cuaca : Berawan";
-            if ({{ $cuaca }} == 3) cuaca.innerHTML = "Cuaca : Hujan";
+            if ({{ $pelayanan_pegawai }} == 1) pelayanan_pegawai.innerHTML = "pelayanan_pegawai : Baik";
+            if ({{ $pelayanan_pegawai }} == 2) pelayanan_pegawai.innerHTML = "pelayanan_pegawai : Cukup Baik";
+            if ({{ $pelayanan_pegawai }} == 3) pelayanan_pegawai.innerHTML = "pelayanan_pegawai : Tidak Baik";
           </script>
         </h3>
-        <h3 class="animated fadeInLeft" id="temperatur">
+        <h3 class="animated fadeInLeft" id="ketanggapan_pegawai">
           <script>
-            if ({{ $temperatur }} == 1) temperatur.innerHTML = "Temperatur : Panas";
-            if ({{ $temperatur }} == 2) temperatur.innerHTML = "Temperatur : Sejuk";
-            if ({{ $temperatur }} == 3) temperatur.innerHTML = "Temperatur : Dingin";
+            if ({{ $ketanggapan_pegawai }} == 1) ketanggapan_pegawai.innerHTML = "ketanggapan_pegawai : Baik";
+            if ({{ $ketanggapan_pegawai }} == 2) ketanggapan_pegawai.innerHTML = "ketanggapan_pegawai : Cukup Baik";
+            if ({{ $ketanggapan_pegawai }} == 3) ketanggapan_pegawai.innerHTML = "ketanggapan_pegawai : Tidak Baik";
           </script>
         </h3>
-        <h3 class="animated fadeInLeft" id="kelembapan">
+        <h3 class="animated fadeInLeft" id="kesopanan_pegawai">
           <script>
-            if ({{ $kelembapan }} == 1) kelembapan.innerHTML = "Kelembapan : Tinggi";
-            if ({{ $kelembapan }} == 2) kelembapan.innerHTML = "Kelembapan : Normal";
+            if ({{ $kesopanan_pegawai }} == 1) kesopanan_pegawai.innerHTML = "kesopanan_pegawai : Baik";
+            if ({{ $kesopanan_pegawai }} == 2) kesopanan_pegawai.innerHTML = "kesopanan_pegawai : Cukup Baik";
+            if ({{ $kesopanan_pegawai }} == 3) kesopanan_pegawai.innerHTML = "kesopanan_pegawai : Tidak Baik";
           </script>
         </h3>
-        <h3 class="animated fadeInLeft" id="angin">
+        <h3 class="animated fadeInLeft" id="ketepatan_pelayanan">
           <script>
-            if ({{ $angin }} == 1) angin.innerHTML = "Angin : True";
-            if ({{ $angin }} == 2) angin.innerHTML = "Angin : False";
+            if ({{ $ketepatan_pelayanan }} == 1) ketepatan_pelayanan.innerHTML = "ketepatan_pelayanan : Baik";
+            if ({{ $ketepatan_pelayanan }} == 2) ketepatan_pelayanan.innerHTML = "ketepatan_pelayanan : Cukup Baik";
+            if ({{ $ketepatan_pelayanan }} == 3) ketepatan_pelayanan.innerHTML = "ketepatan_pelayanan : Tidak Baik";
+          </script>
+        </h3>
+        <h3 class="animated fadeInLeft" id="fasilitas">
+          <script>
+            if ({{ $fasilitas }} == 1) fasilitas.innerHTML = "fasilitas : Baik";
+            if ({{ $fasilitas }} == 2) fasilitas.innerHTML = "fasilitas : Cukup Baik";
+            if ({{ $fasilitas }} == 3) fasilitas.innerHTML = "fasilitas : Tidak Baik";
+          </script>
+        </h3>
+        <h3 class="animated fadeInLeft" id="keamanan_kantor">
+          <script>
+            if ({{ $keamanan_kantor }} == 1) keamanan_kantor.innerHTML = "keamanan_kantor : Baik";
+            if ({{ $keamanan_kantor }} == 2) keamanan_kantor.innerHTML = "keamanan_kantor : Cukup Baik";
+            if ({{ $keamanan_kantor }} == 3) keamanan_kantor.innerHTML = "keamanan_kantor : Tidak Baik";
           </script>
         </h3>
 
       </div>
       <div class="col-sm-8">
-        <h1 class="animated fadeInUp" id="bermain">
-          Sistem Menyarankan Untuk {{$bermain}}
+        <h1 class="animated fadeInUp" id="hasil">
+          Sistem Memberikan Hasil {{$hasil}}
         </h1>
       </div>
       <div class="col-md-12">
       <hr>
         <table class="table table-hover">
           <tr class="active">
-            <th>Bermain</th>
-            <th>Cuaca</th>
-            <th>Temperatur</th>
-            <th>Kelembapan</th>
-            <th>Angin</th>
+            <th>Hasil</th>
+            <th>Pelayanan Pegawai</th>
+            <th>Ketanggapan Pegawai</th>
+            <th>Kesopanan Pegawai</th>
+            <th>Ketepatan Pelayanan</th>
+            <th>Fasilitas</th>
+            <th>Keamanan Kantor</th>
             <th>Persentase</th>
           </tr>
-          @if($persentaseY > $persentaseT)
+          @if($hasil == 'Sangat Puas')
           <tr class="danger">
           @else
           <tr class="active">
           @endif
-            <td>Ya</td>
-            <td>{{$cuacaY}}</td>
-            <td>{{$temperaturY}}</td>
-            <td>{{$kelembapanY}}</td>
-            <td>{{$anginY}}</td>
-            <td>{{$persentaseY}}%</td>            
+            <td>Sangat Puas</td>
+            <td>{{$pelayanan_pegawai_sangatPuas}}</td>
+            <td>{{$ketanggapan_pegawai_sangatPuas}}</td>
+            <td>{{$kesopanan_pegawai_sangatPuas}}</td>
+            <td>{{$ketepatan_pelayanan_sangatPuas}}</td>
+            <td>{{$fasilitas_sangatPuas}}</td>
+            <td>{{$keamanan_kantor_sangatPuas}}%</td>
+            <td>{{$presentaseSangatPuas}}%</td>
           </tr>
-          @if($persentaseT > $persentaseY)
+          @if($hasil == 'Puas')
           <tr class="danger">
           @else
           <tr class="active">
           @endif
-            <td>Tidak</td>
-            <td>{{$cuacaT}}</td>
-            <td>{{$temperaturT}}</td>
-            <td>{{$kelembapanT}}</td>
-            <td>{{$anginT}}</td>
-            <td>{{$persentaseT}}%</td>
+            <td>Puas</td>
+            <td>{{$pelayanan_pegawai_puas}}</td>
+            <td>{{$ketanggapan_pegawai_puas}}</td>
+            <td>{{$kesopanan_pegawai_puas}}</td>
+            <td>{{$ketepatan_pelayanan_puas}}</td>
+            <td>{{$fasilitas_puas}}</td>
+            <td>{{$keamanan_kantor_puas}}%</td>
+            <td>{{$presentasePuas}}%</td>
+          </tr>
+          @if($hasil == 'Tidak Puas')
+          <tr class="danger">
+          @else
+          <tr class="active">
+          @endif
+            <td>Tidak Puas</td>
+            <td>{{$pelayanan_pegawai_tidakPuas}}</td>
+            <td>{{$ketanggapan_pegawai_tidakPuas}}</td>
+            <td>{{$kesopanan_pegawai_tidakPuas}}</td>
+            <td>{{$ketepatan_pelayanan_tidakPuas}}</td>
+            <td>{{$fasilitas_tidakPuas}}</td>
+            <td>{{$keamanan_kantor_tidakPuas}}%</td>
+            <td>{{$presentaseTidakPuas}}%</td>
+          </tr>
+          @if($hasil == 'Sangat Tidak Puas')
+          <tr class="danger">
+          @else
+          <tr class="active">
+          @endif
+            <td>Sangat Tidak Puas</td>
+            <td>{{$pelayanan_pegawai_sangatTidakPuas}}</td>
+            <td>{{$ketanggapan_pegawai_sangatTidakPuas}}</td>
+            <td>{{$kesopanan_pegawai_sangatTidakPuas}}</td>
+            <td>{{$ketepatan_pelayanan_sangatTidakPuas}}</td>
+            <td>{{$fasilitas_sangatTidakPuas}}</td>
+            <td>{{$keamanan_kantor_sangatTidakPuas}}%</td>
+            <td>{{$presentaseSangatTidakPuas}}%</td>
           </tr>
         </table>
+        <hr>
+        <a href="{{url('result/print')}}">
+          <button type="button" class="btn btn-lg btn-danger">Print</button>
+        </a>
+
       </div>
     </div>
     <!-- jQuery library -->

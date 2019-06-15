@@ -15,11 +15,13 @@ class CreateTableDataTraining extends Migration
     {
         Schema::create('datatrinings', function (Blueprint $table){
             $table->increments('id');
-            $table->enum('cuaca',['1','2','3']);
-            $table->enum('temperatur',['1','2','3']);
-            $table->enum('kelembapan',['1','2']);
-            $table->enum('angin',['1','2']);
-            $table->enum('bermain',['1','2']);
+            $table->enum('pelayanan_pegawai',['1','2','3']);
+            $table->enum('ketanggapan_pegawai',['1','2','3']);
+            $table->enum('kesopanan_pegawai',['1','2','3']);
+            $table->enum('ketepatan_pelayanan',['1','2','3']);
+            $table->enum('fasilitas',['1','2','3']);
+            $table->enum('keamanan_kantor',['1','2','3']);
+            $table->enum('tingkat_kepuasan',['1','2','3','4']);
             $table->timestamps();
 
         });

@@ -6,21 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Datatrining extends Model
 {
-
-
-    public static function pbermain($bermain){
+    public static function ptingkatkepuasan($tingkat_kepuasan){
         $datas = Datatrining::all();
         $countDatas = count($datas);
-        $dataOutput = Datatrining::where('bermain','=',$bermain)->get();
+        $dataOutput = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasan)->get();
         $countOutput = count($dataOutput);
-        $pbermain = $countOutput / $countDatas;
-        return $pbermain;
+        $tingkat_kepuasan = $countOutput / $countDatas;
+        return $tingkat_kepuasan;
 
     }
-    public static function pcuaca($bermain,$param){
-        $dataParam_ = Datatrining::where('bermain','=',$bermain)->where('cuaca','=',$param)->get();
+    public static function ppelayanan_pegawai($tingkat_kepuasaan,$param){
+        $dataParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->where('pelayanan_pegawai','=',$param)->get();
         $dataParam = count($dataParam_);
-        $dataOutputParam_ = Datatrining::where('bermain','=',$bermain)->get();
+        $dataOutputParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->get();
         $dataOutputParam = count($dataOutputParam_);
 
         if($dataParam == 0){
@@ -28,13 +26,13 @@ class Datatrining extends Model
             $dataOutputParam = $dataOutputParam + 3;
         }
 
-        $pcuaca = $dataParam/$dataOutputParam;
-        return $pcuaca;
+        $ppelayanan_pegawai = $dataParam/$dataOutputParam;
+        return $ppelayanan_pegawai;
     }
-    public static function ptemperatur($bermain,$param){
-        $dataParam_ = Datatrining::where('bermain','=',$bermain)->where('temperatur','=',$param)->get();
+    public static function pketanggapan_pegawai($tingkat_kepuasaan,$param){
+        $dataParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->where('ketanggapan_pegawai','=',$param)->get();
         $dataParam = count($dataParam_);
-        $dataOutputParam_ = Datatrining::where('bermain','=',$bermain)->get();
+        $dataOutputParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->get();
         $dataOutputParam = count($dataOutputParam_);
 
         if($dataParam == 0){
@@ -42,34 +40,55 @@ class Datatrining extends Model
             $dataOutputParam = $dataOutputParam + 3;
         }
 
-        $ptemperatur = $dataParam/$dataOutputParam;
-        return $ptemperatur;
+        $pketanggapan_pegawai = $dataParam/$dataOutputParam;
+        return $pketanggapan_pegawai;
     }
-    public static function pkelembapan($bermain,$param){
-        $dataParam_ = Datatrining::where('bermain','=',$bermain)->where('kelembapan','=',$param)->get();
+    public static function pkesopanan_pegawai($tingkat_kepuasaan,$param){
+        $dataParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->where('kesopanan_pegawai','=',$param)->get();
         $dataParam = count($dataParam_);
-        $dataOutputParam_ = Datatrining::where('bermain','=',$bermain)->get();
+        $dataOutputParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->get();
         $dataOutputParam = count($dataOutputParam_);
         if($dataParam == 0){
             $dataParam = $dataParam +1;
             $dataOutputParam = $dataOutputParam + 2;
         }
-        $pkelembapan = $dataParam/$dataOutputParam;
-        return $pkelembapan;
+        $pkesopanan_pegawai = $dataParam/$dataOutputParam;
+        return $pkesopanan_pegawai;
     }
-    public static function pangin($bermain,$param){
-        $dataParam_ = Datatrining::where('bermain','=',$bermain)->where('angin','=',$param)->get();
+    public static function pketepatan_pelayanan($tingkat_kepuasaan,$param){
+        $dataParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->where('ketepatan_pelayanan','=',$param)->get();
         $dataParam = count($dataParam_);
-        $dataOutputParam_ = Datatrining::where('bermain','=',$bermain)->get();
+        $dataOutputParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->get();
         $dataOutputParam = count($dataOutputParam_);
         if($dataParam == 0){
             $dataParam = $dataParam +1;
             $dataOutputParam = $dataOutputParam + 2;
         }
-        $pangin = $dataParam/$dataOutputParam;
-        return $pangin;
+        $pketepatan_pelayanan = $dataParam/$dataOutputParam;
+        return $pketepatan_pelayanan;
     }
-
-
-
+    public static function pfasilitas($tingkat_kepuasaan,$param){
+        $dataParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->where('fasilitas','=',$param)->get();
+        $dataParam = count($dataParam_);
+        $dataOutputParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->get();
+        $dataOutputParam = count($dataOutputParam_);
+        if($dataParam == 0){
+            $dataParam = $dataParam +1;
+            $dataOutputParam = $dataOutputParam + 2;
+        }
+        $pfasilitas = $dataParam/$dataOutputParam;
+        return $pfasilitas;
+    }
+    public static function pkeamanan_kantor($tingkat_kepuasaan,$param){
+        $dataParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->where('keamanan_kantor','=',$param)->get();
+        $dataParam = count($dataParam_);
+        $dataOutputParam_ = Datatrining::where('tingkat_kepuasan','=',$tingkat_kepuasaan)->get();
+        $dataOutputParam = count($dataOutputParam_);
+        if($dataParam == 0){
+            $dataParam = $dataParam +1;
+            $dataOutputParam = $dataOutputParam + 2;
+        }
+        $pkeamanan_kantor = $dataParam/$dataOutputParam;
+        return $pkeamanan_kantor;
+    }
 }

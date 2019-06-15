@@ -9,42 +9,85 @@
   </head>
   <body>
     <div class="container">
+
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{route('logout')}}">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
       <div class="col-md-6">
         <div class="form-primary">
           <form class="form-horizontal" action="/result" method="post">
             {{ csrf_field() }}
             <div class="form-group row">
-              <label for="cuaca">Cuaca</label>
-              <select class="form-control" required name="cuaca">
+              <label for="pelayanan_pegawai">pelayanan_pegawai</label>
+              <select class="form-control" required name="pelayanan_pegawai">
                 <option value=""></option>
-                <option value="1">Cerah</option>
-                <option value="2">Berawan</option>
-                <option value="3">Hujan</option>
+                <option value="1">Baik</option>
+                <option value="2">Cukup Baik</option>
+                <option value="3">Tidak Baik</option>                
               </select>
             </div>
             <div class="form-group row">
-              <label for="temperatur">Temperatur</label>
-              <select class="form-control" required name="temperatur">
+              <label for="ketanggapan_pegawai">ketanggapan_pegawai</label>
+              <select class="form-control" required name="ketanggapan_pegawai">
                 <option value=""></option>
-                <option value="1">Panas</option>
-                <option value="2">Sejuk</option>
-                <option value="3">Dingin</option>
+                <option value="1">Baik</option>
+                <option value="2">Cukup Baik</option>
+                <option value="3">Tidak Baik</option>                
               </select>
             </div>
             <div class="form-group row">
-              <label for="kelembapan">Kelembapan</label>
-              <select class="form-control" required name="kelembapan">
+              <label for="kesopanan_pegawai">kesopanan_pegawai</label>
+              <select class="form-control" required name="kesopanan_pegawai">
                 <option value=""></option>
-                <option value="1">Tinggi</option>
-                <option value="2">Normal</option>
+                <option value="1">Baik</option>
+                <option value="2">Cukup Baik</option>
+                <option value="3">Tidak Baik</option>                
               </select>
             </div>
             <div class="form-group row">
-              <label for="angin">Angin</label>
-              <select class="form-control" required name="angin">
+              <label for="ketepatan_pelayanan">ketepatan_pelayanan</label>
+              <select class="form-control" required name="ketepatan_pelayanan">
                 <option value=""></option>
-                <option value="1">True</option>
-                <option value="2">False</option>
+                <option value="1">Baik</option>
+                <option value="2">Cukup Baik</option>
+                <option value="3">Tidak Baik</option>                
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="fasilitas">fasilitas</label>
+              <select class="form-control" required name="fasilitas">
+                <option value=""></option>
+                <option value="1">Baik</option>
+                <option value="2">Cukup Baik</option>
+                <option value="3">Tidak Baik</option>                
+              </select>
+            </div>
+            <div class="form-group row">
+              <label for="keamanan_kantor">keamanan_kantor</label>
+              <select class="form-control" required name="keamanan_kantor">
+                <option value=""></option>
+                <option value="1">Baik</option>
+                <option value="2">Cukup Baik</option>
+                <option value="3">Tidak Baik</option>                
               </select>
             </div>
             <div class="form-group">

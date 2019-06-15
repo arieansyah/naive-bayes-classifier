@@ -11,11 +11,18 @@
 |
 */
 
-
+Auth::routes();
+Route::group(['middleware' => ['auth']], function(){
 
 Route::post('/result','DatatriningController@index');
 Route::get('/result','DatatriningController@result');
+Route::get('/result/print','DatatriningController@printPasien');
 
 Route::get('/', function (){
   return view('index');
+});
+
+$this->get('logout', 'Auth\LoginController@logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
 });
